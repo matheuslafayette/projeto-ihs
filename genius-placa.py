@@ -4,7 +4,7 @@ import os, sys
 from fcntl import ioctl
 import serial
 import time
-import utils
+from utils import *
 
 debug = False
 
