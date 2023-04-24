@@ -197,16 +197,19 @@ def main():
           level += 1
       else:
           text = font.render("Sorry, you lost!", True, RED)
+          text2 = font.render("Press key 4 to quit and other key to restart!", True, WHITE)
           level = 1
           screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 - text.get_height()/2))
+          screen.blit(text2, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 + 30 - text.get_height()/2))
           pygame.display.flip()
-          pygame.time.wait(3000)
-          pygame.quit()
+          pygame.time.wait(500)
+          value = first_b_press(fd)
+          if value == 4:
+            pygame.quit()
 
       screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 - text.get_height()/2))
       pygame.display.flip()
       pygame.time.wait(3000)
-      #pygame.quit()
       
 
 if __name__ == "__main__":
