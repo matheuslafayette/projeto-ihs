@@ -1,21 +1,8 @@
 import pygame
 import random
-import os, sys
-from fcntl import ioctl
 import serial
 import time
 from utils import *
-
-debug = False
-
-# ioctl commands defined at the pci driver
-RD_SWITCHES   = 24929
-RD_PBUTTONS   = 24930
-WR_L_DISPLAY  = 24931
-WR_R_DISPLAY  = 24932
-WR_RED_LEDS   = 24933
-WR_GREEN_LEDS = 24934
-
 
 last_r_disp_data = [0 for i in range (4)]
 

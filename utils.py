@@ -1,4 +1,17 @@
 import serial
+from fcntl import ioctl
+import os, sys
+
+# ioctl commands defined at the pci driver
+RD_SWITCHES   = 24929
+RD_PBUTTONS   = 24930
+WR_L_DISPLAY  = 24931
+WR_R_DISPLAY  = 24932
+WR_RED_LEDS   = 24933
+WR_GREEN_LEDS = 24934
+
+debug = False
+
 ser = serial.Serial("/dev/ttyUSB0")
 
 def read_button(fd):
