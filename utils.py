@@ -14,6 +14,8 @@ debug = False
 
 ser = serial.Serial("/dev/ttyUSB0")
 
+last_r_disp_data = [0 for i in range (4)]
+
 def read_button(fd):
   ioctl(fd, RD_PBUTTONS)
   value = os.read(fd, 4); # read 4 bytes and store in red var

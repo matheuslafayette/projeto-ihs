@@ -4,8 +4,6 @@ import serial
 import time
 from utils import *
 
-last_r_disp_data = [0 for i in range (4)]
-
 def file_desc():
   if len(sys.argv) < 2:
     print("Error: expected more command line arguments")
