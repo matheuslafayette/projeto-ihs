@@ -203,7 +203,6 @@ def main():
           screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 - text.get_height()/2))
           screen.blit(text2, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 + 30 - text.get_height()/2))
           pygame.display.flip()
-          pygame.time.wait(500)
           value = first_b_press(fd)
           if value == 4:
             pygame.quit()
