@@ -27,7 +27,7 @@ BUTTON_SIZE = 100
 BUTTON_MARGIN = 20
 SEQUENCE_DELAY_BETWEEN = 200  # milliseconds
 SEQUENCE_DELAY = 500
-SEQUENCE_DELAY_LEVEL = 100
+SEQUENCE_DELAY_LEVEL = 40
 PRINT_DELAY = 100
 FLASH_DELAY = 500  # milliseconds
 
@@ -207,7 +207,7 @@ def main():
           if value == 4:
             pygame.quit()
 
-      pygame.time.wait(2000)
+      pygame.time.wait(3000)
       
 
 if __name__ == "__main__":
