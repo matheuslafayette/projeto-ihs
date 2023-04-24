@@ -133,9 +133,10 @@ def main():
       
       # Print your turn
       text = font.render("your turn!", True, WHITE)
-      text2 = font.render("turn on switch 1 to read your input!", True, WHITE) 
       screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/5 - text.get_height()/2))
-      screen.blit(text2, (SCREEN_WIDTH/2 - text2.get_width()/2, SCREEN_HEIGHT/5 - text2.get_height()/2 + 30))
+      if(level == 1):
+        text2 = font.render("turn on switch 1 to read your input!", True, WHITE) 
+        screen.blit(text2, (SCREEN_WIDTH/2 - text2.get_width()/2, SCREEN_HEIGHT/5 - text2.get_height()/2 + 30))
       
       pygame.display.flip()
       pygame.time.wait(100)
