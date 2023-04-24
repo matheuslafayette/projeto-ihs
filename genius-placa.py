@@ -26,6 +26,7 @@ NUM_BUTTONS = 4
 BUTTON_SIZE = 100
 BUTTON_MARGIN = 20
 SEQUENCE_DELAY = 1000  # milliseconds
+SEQUENCE_DELAY_LEVEL = 200
 PRINT_DELAY = 100
 FLASH_DELAY = 500  # milliseconds
 
@@ -126,7 +127,7 @@ def main():
       # Display the sequence
       for button_index in sequence:
           buttons[button_index].flash(screen, FLASH_DELAY)
-          pygame.time.wait(SEQUENCE_DELAY)
+          pygame.time.wait(SEQUENCE_DELAY - SEQUENCE_DELAY_LEVEL*level)
           
       
       # Print your turn
@@ -144,8 +145,6 @@ def main():
           waiting = True
           value = 0
           while waiting and correct:
-              #event = pygame.event.wait()
-              #value = first_b_press(fd)
               count = 0
               check = check_switch(fd)
               value = ret_pos()
