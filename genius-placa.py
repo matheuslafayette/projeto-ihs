@@ -161,30 +161,9 @@ def main():
               
               if check:
                   waiting = False
-                  if value == 1:
-                      player_sequence.append(0)
-                      buttons[0].flash(screen, FLASH_DELAY)
-                      pygame.time.wait(PRINT_DELAY)
-                      if player_sequence[i] != sequence[i]:
-                          correct = False
-                          break
-                  elif value == 2:
-                      player_sequence.append(1)
-                      buttons[1].flash(screen, FLASH_DELAY)
-                      pygame.time.wait(PRINT_DELAY)
-                      if player_sequence[i] != sequence[i]:
-                          correct = False
-                          break
-                  elif value == 3:
-                      player_sequence.append(2)
-                      buttons[2].flash(screen, FLASH_DELAY)
-                      pygame.time.wait(PRINT_DELAY)
-                      if player_sequence[i] != sequence[i]:
-                          correct = False
-                          break
-                  elif value == 4:
-                      player_sequence.append(3)
-                      buttons[3].flash(screen, FLASH_DELAY)
+                  if value >= 1 and value <= 4:
+                      player_sequence.append(value-1)
+                      buttons[value-1].flash(screen, FLASH_DELAY)
                       pygame.time.wait(PRINT_DELAY)
                       if player_sequence[i] != sequence[i]:
                           correct = False
