@@ -81,7 +81,6 @@ def main():
       buttons.append(button)
 
   # Set up the game loop
-  done = False
   clock = pygame.time.Clock()
   level = 1
   sequence = []
@@ -89,11 +88,11 @@ def main():
   set_red_leds(fd, 0x40405555)
   set_green_leds(fd, 0x40404055)
 
-  while not done:
+  while True:
       # Handle events
       for event in pygame.event.get():
           if event.type == pygame.QUIT:
-              done = True
+              break
       
       # Display the instructions
       screen.fill(BLACK)
@@ -196,6 +195,7 @@ def main():
           text = font.render("Congratulations, you won!", True, GREEN)
           level += 1
           screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 - text.get_height()/2))
+          pygame.display.flip()
       else:
           text = font.render("Sorry, you lost!", True, RED)
           text2 = font.render("Press key 4 to quit and other key to restart!", True, WHITE)
