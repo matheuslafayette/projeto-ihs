@@ -99,7 +99,7 @@ def main():
       # Display the instructions
       screen.fill(BLACK)
       if(level == 1):
-          text = font.render("Press any key to start", True, WHITE)
+          text = font.render("Press any key to start!", True, WHITE)
           screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 - text.get_height()/2))
           pygame.display.flip()
           # Wait for a key press to start the game
@@ -133,7 +133,10 @@ def main():
       
       # Print your turn
       text = font.render("your turn!", True, WHITE)
+      text2 = font.render("turn on switch 1 to read your input!", True, WHITE) 
       screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/5 - text.get_height()/2))
+      screen.blit(text2, (SCREEN_WIDTH/2 - text2.get_width()/2, SCREEN_HEIGHT/5 - text2.get_height()/2 + 30))
+      
       pygame.display.flip()
       pygame.time.wait(100)
       
@@ -156,6 +159,7 @@ def main():
                   value = 0   
               
               if check:
+                  waiting = False
                   if value == 1:
                       player_sequence.append(0)
                       buttons[0].flash(screen, FLASH_DELAY)
@@ -163,7 +167,6 @@ def main():
                       if player_sequence[i] != sequence[i]:
                           correct = False
                           break
-                      waiting = False
                   elif value == 2:
                       player_sequence.append(1)
                       buttons[1].flash(screen, FLASH_DELAY)
@@ -171,7 +174,6 @@ def main():
                       if player_sequence[i] != sequence[i]:
                           correct = False
                           break
-                      waiting = False
                   elif value == 3:
                       player_sequence.append(2)
                       buttons[2].flash(screen, FLASH_DELAY)
@@ -179,7 +181,6 @@ def main():
                       if player_sequence[i] != sequence[i]:
                           correct = False
                           break
-                      waiting = False
                   elif value == 4:
                       player_sequence.append(3)
                       buttons[3].flash(screen, FLASH_DELAY)
@@ -187,7 +188,8 @@ def main():
                       if player_sequence[i] != sequence[i]:
                           correct = False
                           break
-                      waiting = False
+                  else:
+                      waiting = True
                   
       # Display the result
       screen.fill(BLACK)
