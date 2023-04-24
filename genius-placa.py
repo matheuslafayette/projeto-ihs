@@ -195,6 +195,7 @@ def main():
       if correct:
           text = font.render("Congratulations, you won!", True, GREEN)
           level += 1
+          screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 - text.get_height()/2))
       else:
           text = font.render("Sorry, you lost!", True, RED)
           text2 = font.render("Press key 4 to quit and other key to restart!", True, WHITE)
@@ -207,9 +208,7 @@ def main():
           if value == 4:
             pygame.quit()
 
-      screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 - text.get_height()/2))
-      pygame.display.flip()
-      pygame.time.wait(3000)
+      pygame.time.wait(2000)
       
 
 if __name__ == "__main__":
