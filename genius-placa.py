@@ -201,7 +201,7 @@ def main():
           text2 = font.render("Press key 4 to quit and other key to restart!", True, WHITE)
           level = 1
           screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 - text.get_height()/2))
-          screen.blit(text2, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 + 30 - text.get_height()/2))
+          screen.blit(text2, (SCREEN_WIDTH/2 - text2.get_width()/2, SCREEN_HEIGHT/2 + 30 - text2.get_height()/2))
           pygame.display.flip()
           value = first_b_press(fd)
           if value == 4:
