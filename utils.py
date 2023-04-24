@@ -25,7 +25,7 @@ def read_button(fd):
   return value
   
 
-def first_b_pres(fd):
+def first_b_press(fd):
   value = 0
   while(value == 0):
     val_read = read_button(fd)
@@ -49,7 +49,7 @@ def read_switch(fd):
   return value
   
 
-def check_swirch(fd):
+def check_switch(fd):
   val = 0
   val_read = read_switch(fd)
   if (val_read == 0x1):

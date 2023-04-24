@@ -102,11 +102,7 @@ def main():
           screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 - text.get_height()/2))
           pygame.display.flip()
           # Wait for a key press to start the game
-          waiting = True
-          while waiting:
-              for event in pygame.event.get():
-                  if event.type == pygame.KEYDOWN:
-                      waiting = False
+          first_b_press(fd)
       text = font.render(f"level {level}", True, WHITE)
       screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 + 30 - text.get_height()/2))
       pygame.display.flip()
@@ -150,9 +146,9 @@ def main():
           value = 0
           while waiting and correct:
               #event = pygame.event.wait()
-              #value = first_b_pres(fd)
+              #value = first_b_press(fd)
               count = 0
-              check = check_swirch(fd)
+              check = check_switch(fd)
               value = ret_pos()
               while(count < 3 and ret_pos() == value):
                   print(count)
@@ -197,10 +193,10 @@ def main():
       # Display the result
       screen.fill(BLACK)
       if correct:
-          text = font.render("Congratulations, you win!", True, GREEN)
+          text = font.render("Congratulations, you won!", True, GREEN)
           level += 1
       else:
-          text = font.render("Sorry, you lose!", True, RED)
+          text = font.render("Sorry, you lost!", True, RED)
           level = 1
           screen.blit(text, (SCREEN_WIDTH/2 - text.get_width()/2, SCREEN_HEIGHT/2 - text.get_height()/2))
           pygame.display.flip()
